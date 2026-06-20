@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/chuynh/Downloads/aiden-turns-10.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aiden Turns 10 · Matchday Programme</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./index_files/css2" rel="stylesheet">
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id="mainstyle">
   :root{
     --pitch-deep:#0a4f2a;
     --pitch:#0e6536;
@@ -19,272 +20,134 @@
     --ink:#06150c;
     --shadow:rgba(2,12,6,.45);
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
-
   html{scroll-behavior:smooth}
-
   body{
-    font-family:'Outfit',system-ui,sans-serif;
-    color:var(--chalk);
+    font-family:'Outfit',system-ui,sans-serif;color:var(--chalk);
     background:var(--pitch-deep);
-    background-image:repeating-linear-gradient(
-      90deg,
-      var(--pitch) 0 8vw,
-      var(--pitch-stripe) 8vw 16vw
-    );
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
+    background-image:repeating-linear-gradient(90deg,var(--pitch) 0 8vw,var(--pitch-stripe) 8vw 16vw);
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
   }
-
-  /* faint pitch grain / vignette */
   body::before{
-    content:"";
-    position:fixed;inset:0;pointer-events:none;z-index:0;
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     background:
       radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.10), transparent 55%),
       radial-gradient(120% 120% at 50% 120%, rgba(0,0,0,.45), transparent 60%);
   }
-
   .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px}
-
-  /* confetti canvas */
   #confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
 
-  /* ----- shared bits ----- */
   .eyebrow{
-    font-family:'Bebas Neue',sans-serif;
-    letter-spacing:.32em;
-    font-size:clamp(13px,1.6vw,16px);
-    color:var(--lime);
-    display:inline-flex;align-items:center;gap:.7em;
-    text-transform:uppercase;
+    font-family:'Bebas Neue',sans-serif;letter-spacing:.32em;
+    font-size:clamp(13px,1.6vw,16px);color:var(--lime);
+    display:inline-flex;align-items:center;gap:.7em;text-transform:uppercase;
   }
-  .eyebrow::before,.eyebrow::after{
-    content:"";width:34px;height:2px;background:var(--lime);opacity:.65;
-  }
-  .eyebrow.solo::after{display:none}
+  .eyebrow::before,.eyebrow::after{content:"";width:34px;height:2px;background:var(--lime);opacity:.65}
 
-  .chalk-rule{
-    position:relative;height:1px;background:var(--chalk-dim);
-    margin:64px auto;max-width:1180px;
-  }
+  .chalk-rule{position:relative;height:1px;background:var(--chalk-dim);margin:64px auto;max-width:1180px}
   .chalk-rule::after{
-    content:"";position:absolute;left:50%;top:50%;
-    width:13px;height:13px;border-radius:50%;
-    background:var(--chalk);transform:translate(-50%,-50%);
-    box-shadow:0 0 0 4px rgba(243,247,236,.18);
+    content:"";position:absolute;left:50%;top:50%;width:13px;height:13px;border-radius:50%;
+    background:var(--chalk);transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(243,247,236,.18);
   }
 
-  /* ============ HERO ============ */
-  .hero{
-    position:relative;
-    padding:54px 0 18px;
-    text-align:center;
-  }
-  /* chalk centre circle behind jersey */
+  /* HERO */
+  .hero{position:relative;padding:54px 0 18px;text-align:center}
   .hero__circle{
-    position:absolute;top:150px;left:50%;
-    width:min(560px,82vw);aspect-ratio:1;
-    border:2px solid var(--chalk-dim);border-radius:50%;
-    transform:translateX(-50%);
-    z-index:0;
+    position:absolute;top:150px;left:50%;width:min(560px,82vw);aspect-ratio:1;
+    border:2px solid var(--chalk-dim);border-radius:50%;transform:translateX(-50%);z-index:0;
   }
   .hero__circle::before{
-    content:"";position:absolute;left:50%;top:50%;
-    width:18px;height:18px;border-radius:50%;background:var(--chalk-dim);
-    transform:translate(-50%,-50%);
+    content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;
+    background:var(--chalk-dim);transform:translate(-50%,-50%);
   }
-
   .hero__inner{position:relative;z-index:2}
-
   .scoreboard{
-    display:inline-flex;align-items:center;gap:14px;
-    background:rgba(3,18,9,.82);
-    border:1px solid rgba(214,255,69,.35);
-    border-radius:999px;
-    padding:9px 18px;margin-bottom:26px;
-    font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;
-    font-size:15px;
+    display:inline-flex;align-items:center;gap:14px;background:rgba(3,18,9,.82);
+    border:1px solid rgba(214,255,69,.35);border-radius:999px;padding:9px 18px;margin-bottom:26px;
+    font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:15px;
   }
-  .scoreboard .dot{
-    width:9px;height:9px;border-radius:50%;background:#ff5247;
-    box-shadow:0 0 10px #ff5247;animation:blink 1.4s steps(2) infinite;
-  }
+  .scoreboard .dot{width:9px;height:9px;border-radius:50%;background:#ff5247;box-shadow:0 0 10px #ff5247;animation:blink 1.4s steps(2) infinite}
   .scoreboard .sep{width:1px;height:15px;background:rgba(243,247,236,.3)}
   .scoreboard b{color:var(--lime);font-weight:400}
-  .scoreboard [contenteditable]{outline:none;border-bottom:1px dashed transparent;cursor:text}
-  .scoreboard [contenteditable]:hover,.scoreboard [contenteditable]:focus{border-bottom-color:var(--lime)}
+  .scoreboard [contenteditable]{outline:none;border-bottom:1px dashed rgba(214,255,69,.5);cursor:text}
+  .scoreboard [contenteditable]:focus{border-bottom-color:var(--lime)}
   @keyframes blink{50%{opacity:.25}}
 
   .jersey-stage{position:relative;display:inline-block;margin:6px auto 4px}
-  .jersey{
-    width:min(420px,80vw);height:auto;display:block;
-    filter:drop-shadow(0 26px 34px var(--shadow));
-    animation:sway 6s ease-in-out infinite;transform-origin:50% 0;
-  }
+  .jersey{width:min(420px,80vw);height:auto;display:block;filter:drop-shadow(0 26px 34px var(--shadow));animation:sway 6s ease-in-out infinite;transform-origin:50% 0}
   @keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
-
-  /* little sparkles flanking the jersey */
   .spark{position:absolute;color:var(--gold);font-size:26px;animation:twinkle 2.6s ease-in-out infinite}
   .spark.s1{top:6%;left:-4%;animation-delay:.2s}
   .spark.s2{top:30%;right:-7%;font-size:20px;animation-delay:.9s}
   .spark.s3{bottom:6%;left:2%;font-size:18px;animation-delay:1.5s}
   @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
 
-  .hero__title{
-    font-family:'Anton',sans-serif;
-    font-size:clamp(40px,8vw,92px);
-    line-height:.92;letter-spacing:.01em;
-    text-transform:uppercase;
-    margin-top:18px;
-    text-shadow:0 4px 0 rgba(0,0,0,.25);
-  }
+  .hero__title{font-family:'Anton',sans-serif;font-size:clamp(40px,8vw,92px);line-height:.92;letter-spacing:.01em;text-transform:uppercase;margin-top:18px;text-shadow:0 4px 0 rgba(0,0,0,.25)}
   .hero__title .green{color:var(--lime)}
-  .hero__sub{
-    max-width:520px;margin:18px auto 0;
-    color:var(--chalk-dim);font-size:clamp(15px,2vw,18px);
-    line-height:1.55;
-  }
+  .hero__sub{max-width:520px;margin:18px auto 0;color:var(--chalk-dim);font-size:clamp(15px,2vw,18px);line-height:1.55}
 
-  /* ============ ALBUM ============ */
+  /* ALBUM */
   .section{padding:8px 0}
   .section__head{text-align:center;margin-bottom:40px}
-  .section__title{
-    font-family:'Anton',sans-serif;text-transform:uppercase;
-    font-size:clamp(30px,5.5vw,58px);line-height:1;margin:14px 0 12px;
-  }
+  .section__title{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(30px,5.5vw,58px);line-height:1;margin:14px 0 12px}
   .section__note{color:var(--chalk-dim);max-width:560px;margin:0 auto;font-size:16px;line-height:1.5}
-
-  .album{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-    gap:20px;
-  }
-
+  .album{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px}
   .card{
-    position:relative;
-    background:linear-gradient(160deg,#103f24,#0a2c18);
-    border:1px solid rgba(214,255,69,.28);
-    border-radius:16px;
-    padding:12px 12px 14px;
-    overflow:hidden;
-    box-shadow:0 16px 26px var(--shadow);
-    transition:transform .25s ease,border-color .25s ease;
+    position:relative;background:linear-gradient(160deg,#103f24,#0a2c18);
+    border:1px solid rgba(214,255,69,.28);border-radius:16px;padding:12px 12px 14px;
+    overflow:hidden;box-shadow:0 16px 26px var(--shadow);transition:transform .25s ease,border-color .25s ease;
   }
   .card:hover{transform:translateY(-5px);border-color:var(--lime)}
-  /* holo shine sweep */
-  .card::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 48%,transparent 60%);
-    transform:translateX(-120%);transition:transform .8s ease;
-  }
+  .card::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 48%,transparent 60%);transform:translateX(-120%);transition:transform .8s ease}
   .card:hover::after{transform:translateX(120%)}
-
   .card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-  .card__pos{
-    font-family:'Bebas Neue',sans-serif;letter-spacing:.16em;
-    font-size:14px;color:var(--lime);
-  }
-  .card__no{
-    font-family:'Anton',sans-serif;font-size:30px;line-height:.8;
-    color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.3);
-  }
-
-  .card__photo{
-    display:block;position:relative;
-    aspect-ratio:3/4;border-radius:10px;overflow:hidden;
-    background:rgba(0,0,0,.28);
-    border:2px dashed rgba(243,247,236,.28);
-    cursor:pointer;
-  }
+  .card__pos{font-family:'Bebas Neue',sans-serif;letter-spacing:.16em;font-size:14px;color:var(--lime)}
+  .card__no{font-family:'Anton',sans-serif;font-size:30px;line-height:.8;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.3)}
+  .card__photo{display:block;position:relative;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:rgba(0,0,0,.28);border:2px dashed rgba(243,247,236,.28);cursor:pointer}
   .card__photo:hover{border-color:var(--lime)}
   .card__img{width:100%;height:100%;object-fit:cover;display:none}
   .card.filled .card__photo{border-style:solid;border-color:rgba(214,255,69,.4)}
   .card.filled .card__img{display:block}
   .card.filled .card__empty{display:none}
-
-  .card__empty{
-    position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:6px;text-align:center;padding:8px;
-  }
-  .card__empty .plus{
-    font-size:30px;width:46px;height:46px;border-radius:50%;
-    display:grid;place-items:center;
-    background:rgba(214,255,69,.14);color:var(--lime);font-weight:700;
-  }
+  .card__empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:8px}
+  .card__empty .plus{font-size:30px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(214,255,69,.14);color:var(--lime);font-weight:700}
   .card__empty span{font-size:12.5px;color:var(--chalk-dim);letter-spacing:.02em}
-
-  .card__cap{
-    margin-top:11px;min-height:20px;font-size:13.5px;color:var(--chalk);
-    line-height:1.4;outline:none;cursor:text;
-  }
+  .card__cap{margin-top:11px;min-height:20px;font-size:13.5px;color:var(--chalk);line-height:1.4;outline:none;cursor:text}
   .card__cap:empty::before{content:attr(data-ph);color:rgba(243,247,236,.4)}
-  .card__cap:focus{color:var(--chalk)}
 
-  /* ============ BIG SCREEN ============ */
-  .screen{
-    position:relative;
-    background:#04130a;
-    border:3px solid rgba(214,255,69,.4);
-    border-radius:18px;
-    padding:16px;
-    box-shadow:0 24px 50px var(--shadow),inset 0 0 0 1px rgba(0,0,0,.5);
-  }
-  .screen__bar{
-    display:flex;align-items:center;justify-content:space-between;
-    margin-bottom:14px;font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;
-    font-size:14px;color:var(--chalk-dim);
-  }
+  /* BIG SCREEN */
+  .screen{position:relative;background:#04130a;border:3px solid rgba(214,255,69,.4);border-radius:18px;padding:16px;box-shadow:0 24px 50px var(--shadow),inset 0 0 0 1px rgba(0,0,0,.5)}
+  .screen__bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:14px;color:var(--chalk-dim)}
   .screen__bar .live{display:inline-flex;align-items:center;gap:8px;color:var(--lime)}
   .screen__bar .live .dot{width:8px;height:8px;border-radius:50%;background:#ff5247;box-shadow:0 0 8px #ff5247;animation:blink 1.4s steps(2) infinite}
-
-  .videobox{
-    position:relative;width:100%;aspect-ratio:16/9;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(214,255,69,.06), transparent 60%),
-      #020a05;
-    border-radius:10px;overflow:hidden;display:block;cursor:pointer;
-    border:1px solid rgba(255,255,255,.06);
-  }
+  .videobox{position:relative;width:100%;aspect-ratio:16/9;background:radial-gradient(circle at 50% 50%, rgba(214,255,69,.06), transparent 60%),#020a05;border-radius:10px;overflow:hidden;display:block;cursor:pointer;border:1px solid rgba(255,255,255,.06)}
   .videobox video{width:100%;height:100%;object-fit:contain;display:none;background:#000}
   .videobox.filled video{display:block}
   .videobox.filled .videobox__empty{display:none}
-  .videobox__empty{
-    position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:16px;text-align:center;padding:18px;
-  }
-  .play{
-    width:84px;height:84px;border-radius:50%;
-    background:var(--lime);display:grid;place-items:center;
-    box-shadow:0 0 0 10px rgba(214,255,69,.14),0 14px 30px rgba(0,0,0,.4);
-    transition:transform .25s ease;
-  }
+  .videobox__empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:18px}
+  .play{width:84px;height:84px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(214,255,69,.14),0 14px 30px rgba(0,0,0,.4);transition:transform .25s ease}
   .videobox:hover .play{transform:scale(1.07)}
-  .play::before{
-    content:"";display:block;width:0;height:0;margin-left:6px;
-    border-left:26px solid var(--ink);
-    border-top:16px solid transparent;border-bottom:16px solid transparent;
-  }
+  .play::before{content:"";display:block;width:0;height:0;margin-left:6px;border-left:26px solid var(--ink);border-top:16px solid transparent;border-bottom:16px solid transparent}
   .videobox__empty h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.14em;font-size:22px}
   .videobox__empty p{color:var(--chalk-dim);font-size:14px;max-width:340px}
 
-  /* ============ FOOTER ============ */
-  .footer{text-align:center;padding:70px 0 90px}
+  /* FOOTER */
+  .footer{text-align:center;padding:70px 0 120px}
   .footer .stars{color:var(--gold);letter-spacing:.3em;font-size:20px;margin-bottom:14px}
   .footer__whistle{font-family:'Bebas Neue',sans-serif;letter-spacing:.3em;color:var(--lime);font-size:16px}
-  .footer__msg{
-    font-family:'Anton',sans-serif;text-transform:uppercase;
-    font-size:clamp(26px,5vw,52px);line-height:1;margin:14px 0 16px;
-  }
+  .footer__msg{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(26px,5vw,52px);line-height:1;margin:14px 0 16px}
   .footer__motm{color:var(--chalk-dim);font-size:15px;letter-spacing:.04em}
 
-  /* reduced motion */
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;scroll-behavior:auto}
-    .card::after{display:none}
-  }
+  /* DOWNLOAD BAR (builder only) */
+  .dlbar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:70;display:flex;align-items:center;gap:16px;background:rgba(3,18,9,.94);border:1px solid rgba(214,255,69,.45);border-radius:999px;padding:10px 12px 10px 22px;box-shadow:0 14px 34px rgba(0,0,0,.5);backdrop-filter:blur(6px);max-width:calc(100vw - 24px)}
+  .dlbar span{font-size:13px;color:var(--chalk-dim);white-space:nowrap}
+  .dlbar b{color:var(--lime);font-weight:600}
+  .dlbar button{font-family:'Bebas Neue',sans-serif;letter-spacing:.12em;font-size:16px;background:var(--lime);color:var(--ink);border:0;border-radius:999px;padding:12px 24px;cursor:pointer;white-space:nowrap}
+  .dlbar button:hover{filter:brightness(1.06)}
+  .dlbar button:disabled{opacity:.6;cursor:default}
+  @media(max-width:600px){.dlbar span{display:none}}
 
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.card::after{display:none}}
   @media (max-width:560px){
     body{background-image:repeating-linear-gradient(90deg,var(--pitch) 0 16vw,var(--pitch-stripe) 16vw 32vw)}
     .album{grid-template-columns:repeat(2,1fr);gap:14px}
@@ -293,52 +156,37 @@
 </style>
 </head>
 <body>
-<canvas id="confetti" width="1680" height="904"></canvas>
+<canvas id="confetti"></canvas>
 
 <div class="wrap">
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO -->
   <header class="hero">
     <div class="hero__circle"></div>
     <div class="hero__inner">
-
       <div class="scoreboard">
         <span class="dot"></span>
         <span>MATCHDAY <b>10</b></span>
         <span class="sep"></span>
-        <span contenteditable="true" spellcheck="false">6/20/2026<br></span>
+        <span id="heroDate" contenteditable="true" spellcheck="false">TAP TO SET DATE</span>
       </div>
 
       <div class="jersey-stage">
         <span class="spark s1">✦</span>
         <span class="spark s2">✦</span>
         <span class="spark s3">✦</span>
-        <!-- back-of-shirt jersey: name arched over the iconic No.10 -->
         <svg class="jersey" viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Football jersey with the name Aiden and number 10">
           <defs>
-            <lineargradient id="kit" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#ffffff"></stop>
-              <stop offset="1" stop-color="#e4ecdc"></stop>
-            </lineargradient>
-            <path id="nameArc" d="M 92 168 Q 160 138 228 168"></path>
+            <linearGradient id="kit" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4ecdc"/>
+            </linearGradient>
+            <path id="nameArc" d="M 92 168 Q 160 138 228 168"/>
           </defs>
-          <!-- shirt body -->
-          <path d="M118 60
-                   L92 60 L34 104 L70 158 L100 132
-                   L96 312 Q96 326 110 326
-                   L210 326 Q224 326 224 312
-                   L220 132 L250 158 L286 104 L228 60 L202 60
-                   Q190 92 160 92 Q130 92 118 60 Z" fill="url(#kit)" stroke="#06150c" stroke-width="3" stroke-linejoin="round"></path>
-          <!-- collar -->
-          <path d="M118 60 Q160 96 202 60" fill="none" stroke="#d6ff45" stroke-width="9" stroke-linecap="round"></path>
-          <!-- sleeve cuff trim -->
-          <path d="M34 104 L70 158" fill="none" stroke="#d6ff45" stroke-width="7" stroke-linecap="round"></path>
-          <path d="M286 104 L250 158" fill="none" stroke="#d6ff45" stroke-width="7" stroke-linecap="round"></path>
-          <!-- arched name -->
-          <text font-family="Anton, sans-serif" font-size="30" letter-spacing="3" fill="#06150c">
-            <textpath href="#nameArc" startOffset="50%" text-anchor="middle">AIDEN</textpath>
-          </text>
-          <!-- big number -->
+          <path d="M118 60 L92 60 L34 104 L70 158 L100 132 L96 312 Q96 326 110 326 L210 326 Q224 326 224 312 L220 132 L250 158 L286 104 L228 60 L202 60 Q190 92 160 92 Q130 92 118 60 Z" fill="url(#kit)" stroke="#06150c" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M118 60 Q160 96 202 60" fill="none" stroke="#d6ff45" stroke-width="9" stroke-linecap="round"/>
+          <path d="M34 104 L70 158" fill="none" stroke="#d6ff45" stroke-width="7" stroke-linecap="round"/>
+          <path d="M286 104 L250 158" fill="none" stroke="#d6ff45" stroke-width="7" stroke-linecap="round"/>
+          <text font-family="Anton, sans-serif" font-size="30" letter-spacing="3" fill="#06150c"><textPath href="#nameArc" startOffset="50%" text-anchor="middle">AIDEN</textPath></text>
           <text x="160" y="268" text-anchor="middle" font-family="Anton, sans-serif" font-size="132" fill="#06150c">10</text>
         </svg>
       </div>
@@ -350,174 +198,33 @@
 
   <div class="chalk-rule"></div>
 
-  <!-- ================= ALBUM ================= -->
+  <!-- ALBUM -->
   <section class="section">
     <div class="section__head">
       <span class="eyebrow">The Decade Collection</span>
       <h2 class="section__title">One Sticker Per Season</h2>
       <p class="section__note">Tap any card to add a photo from that year — Age 1 right through to Age 10. Add a memory underneath each one.</p>
     </div>
-    <div class="album" id="album"><!-- cards injected by JS --><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">1</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 1" src="blob:null/00f46371-3711-4c08-9d38-5fb63f9d6b40">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 1 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 1…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">2</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 2" src="blob:null/4cea8129-de45-405e-b28f-0bee0a5c0a58">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 2 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 2…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">3</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 3" src="blob:null/948e395e-4e8f-4c7f-9cae-67b1e1a42615">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 3 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 3…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">4</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 4" src="blob:null/0ff55e61-1ab5-49f4-a649-87b3130b6ad0">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 4 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 4…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">5</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 5" src="blob:null/b26f843e-3aab-4199-a9c6-54d644da4243">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 5 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 5…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">6</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 6" src="blob:null/453e48b8-2ff5-489e-b1d8-70ebccc37e82">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 6 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 6…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">7</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 7" src="blob:null/490d0a47-78ec-4ce4-b90b-214d48f19cce">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 7 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 7…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">8</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 8" src="blob:null/8372dffd-7db8-4e14-90e7-772ebd6a8f3f">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 8 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 8…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">9</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 9" src="blob:null/0d5d22c5-4fc6-4dbe-aeee-ab71741391c6">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 9 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 9…"></div>
-    </article><article class="card filled">
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">10</span>
-      </div>
-      <label class="card__photo">
-        <input type="file" accept="image/*" hidden="">
-        <img class="card__img" alt="Aiden at age 10" src="blob:null/84a02e34-837c-4be2-abf6-8f28ea4ec7dc">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age 10 photo</span>
-        </div>
-      </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age 10…"></div>
-    </article></div>
+    <div class="album" id="album"></div>
   </section>
 
   <div class="chalk-rule"></div>
 
-  <!-- ================= BIG SCREEN ================= -->
+  <!-- BIG SCREEN -->
   <section class="section">
     <div class="section__head">
       <span class="eyebrow">Stadium Big Screen</span>
       <h2 class="section__title">Goal Of The Decade</h2>
       <p class="section__note">Upload Aiden's birthday highlight reel. It'll play right here on the big screen.</p>
     </div>
-
     <div class="screen">
       <div class="screen__bar">
         <span class="live"><span class="dot"></span>ON THE BIG SCREEN</span>
         <span>AIDEN · 10 YEARS</span>
       </div>
-      <label class="videobox filled" id="videobox">
-        <input type="file" accept="video/*" hidden="" id="videoInput">
-        <video controls="" playsinline="" id="videoEl" src="blob:null/fa9e5d9b-35e6-4299-873f-72fb7b64ce42"></video>
+      <label class="videobox" id="videobox">
+        <input type="file" accept="video/*" hidden id="videoInput">
+        <video controls playsinline id="videoEl"></video>
         <div class="videobox__empty">
           <span class="play"></span>
           <h3>Upload The Highlight Reel</h3>
@@ -527,50 +234,54 @@
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="stars">★ ★ ★ ★ ★</div>
     <div class="footer__whistle">— Full-Time Whistle —</div>
     <div class="footer__msg">Happy 10th Birthday,<br>Aiden</div>
     <div class="footer__motm">Man of the Match — every single season.</div>
   </footer>
+</div>
 
+<!-- builder control bar (not included in the downloaded file) -->
+<div class="dlbar" id="dlbar">
+  <span id="dlcount"><b>0/10</b> photos added</span>
+  <button id="dlbtn">Download My Page</button>
 </div>
 
 <script>
+  /* media kept here so the export can embed it as data URLs */
+  const state = { photos:{}, video:null };
+
   /* ---------- build the 10 album cards ---------- */
   const album = document.getElementById('album');
   for(let age=1; age<=10; age++){
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <div class="card__top">
-        <span class="card__pos">Age</span>
-        <span class="card__no">${age}</span>
-      </div>
+      <div class="card__top"><span class="card__pos">Age</span><span class="card__no">${age}</span></div>
       <label class="card__photo">
         <input type="file" accept="image/*" hidden>
         <img class="card__img" alt="Aiden at age ${age}">
-        <div class="card__empty">
-          <span class="plus">+</span>
-          <span>Add Age ${age} photo</span>
-        </div>
+        <div class="card__empty"><span class="plus">+</span><span>Add Age ${age} photo</span></div>
       </label>
-      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age ${age}…"></div>
-    `;
+      <div class="card__cap" contenteditable="true" spellcheck="false" data-ph="Add a memory from age ${age}…"></div>`;
     const input = card.querySelector('input');
     const img = card.querySelector('.card__img');
     input.addEventListener('change', e=>{
       const file = e.target.files[0];
       if(!file) return;
-      img.src = URL.createObjectURL(file);
+      img.src = URL.createObjectURL(file);          // crisp live preview
       card.classList.add('filled');
+      const fr = new FileReader();                  // data URL for the export
+      fr.onload = ()=>{ state.photos[age] = fr.result; updateCount(); };
+      fr.readAsDataURL(file);
       celebrate(28);
     });
     album.appendChild(card);
   }
 
-  /* ---------- video upload ---------- */
+  /* ---------- video ---------- */
   const vInput = document.getElementById('videoInput');
   const vEl = document.getElementById('videoEl');
   const vBox = document.getElementById('videobox');
@@ -579,54 +290,119 @@
     if(!file) return;
     vEl.src = URL.createObjectURL(file);
     vBox.classList.add('filled');
+    const fr = new FileReader();
+    fr.onload = ()=>{ state.video = fr.result; updateCount(); };
+    fr.readAsDataURL(file);
     celebrate(60);
   });
-  // don't let clicking the playing video re-open the file picker
   vEl.addEventListener('click', e=>{ if(vBox.classList.contains('filled')) e.preventDefault(); });
 
-  /* ---------- confetti ---------- */
+  /* ---------- counter ---------- */
+  const dlcount = document.getElementById('dlcount');
+  function updateCount(){
+    const n = Object.keys(state.photos).length;
+    const vid = state.video ? ' · video ✓' : '';
+    dlcount.innerHTML = `<b>${n}/10</b> photos added${vid}`;
+  }
+
+  /* ---------- confetti (live) ---------- */
   const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   const cv = document.getElementById('confetti');
   const ctx = cv.getContext('2d');
   let parts = [], raf = null;
   const COLORS = ['#d6ff45','#ffc73a','#ffffff','#36c46f','#ff5247'];
-
-  function size(){ cv.width = innerWidth; cv.height = innerHeight; }
-  size(); addEventListener('resize', size);
-
+  function sz(){ cv.width = innerWidth; cv.height = innerHeight; }
+  sz(); addEventListener('resize', sz);
   function celebrate(n){
     if(reduce) return;
-    for(let i=0;i<n;i++){
-      parts.push({
-        x:Math.random()*cv.width,
-        y:-20-Math.random()*cv.height*0.3,
-        r:5+Math.random()*7,
-        c:COLORS[Math.floor(Math.random()*COLORS.length)],
-        vx:(Math.random()-0.5)*3,
-        vy:2+Math.random()*3.5,
-        rot:Math.random()*6.28,
-        vr:(Math.random()-0.5)*0.3
-      });
-    }
+    for(let i=0;i<n;i++) parts.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.3,r:5+Math.random()*7,c:COLORS[Math.floor(Math.random()*COLORS.length)],vx:(Math.random()-0.5)*3,vy:2+Math.random()*3.5,rot:Math.random()*6.28,vr:(Math.random()-0.5)*0.3});
     if(!raf) loop();
   }
-
   function loop(){
     ctx.clearRect(0,0,cv.width,cv.height);
-    parts.forEach(p=>{
-      p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.vy+=0.03;
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
-      ctx.fillStyle=p.c; ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);
-      ctx.restore();
-    });
+    parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.03;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);ctx.restore();});
     parts = parts.filter(p=>p.y < cv.height+30);
-    if(parts.length){ raf = requestAnimationFrame(loop); }
-    else { ctx.clearRect(0,0,cv.width,cv.height); raf=null; }
+    if(parts.length) raf = requestAnimationFrame(loop); else { ctx.clearRect(0,0,cv.width,cv.height); raf=null; }
+  }
+  window.addEventListener('load', ()=> celebrate(140));
+
+  /* ---------- export: bundle everything into one standalone file ---------- */
+  const EXPORT_CONFETTI = "(function(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var cv=document.getElementById('confetti');if(!cv)return;var ctx=cv.getContext('2d');var parts=[],raf=null;var C=['#d6ff45','#ffc73a','#ffffff','#36c46f','#ff5247'];function sz(){cv.width=innerWidth;cv.height=innerHeight;}sz();addEventListener('resize',sz);function burst(n){for(var i=0;i<n;i++){parts.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.3,r:5+Math.random()*7,c:C[Math.floor(Math.random()*C.length)],vx:(Math.random()-0.5)*3,vy:2+Math.random()*3.5,rot:Math.random()*6.28,vr:(Math.random()-0.5)*0.3});}if(!raf)loop();}function loop(){ctx.clearRect(0,0,cv.width,cv.height);parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.03;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);ctx.restore();});parts=parts.filter(function(p){return p.y<cv.height+30;});if(parts.length){raf=requestAnimationFrame(loop);}else{ctx.clearRect(0,0,cv.width,cv.height);raf=null;}}window.addEventListener('load',function(){burst(140);});})();";
+
+  function buildFinalHTML(){
+    const clone = document.documentElement.cloneNode(true);
+
+    // bake photos into each card as data URLs
+    clone.querySelectorAll('.card').forEach(card=>{
+      const age = card.querySelector('.card__no').textContent.trim();
+      const img = card.querySelector('.card__img');
+      if(state.photos[age]){ img.setAttribute('src', state.photos[age]); card.classList.add('filled'); }
+      else {
+        img.removeAttribute('src');
+        const emp = card.querySelector('.card__empty');
+        if(emp) emp.innerHTML = '<span class="plus" style="background:rgba(255,255,255,.06);color:var(--chalk-dim)">★</span><span>Age '+age+'</span>';
+      }
+    });
+
+    // bake video
+    const v = clone.querySelector('#videoEl');
+    const vb = clone.querySelector('#videobox');
+    if(state.video){ v.setAttribute('src', state.video); if(vb) vb.classList.add('filled'); }
+    else if(vb){
+      const h = vb.querySelector('.videobox__empty h3'); if(h) h.textContent='Highlight Reel';
+      const p = vb.querySelector('.videobox__empty p'); if(p) p.textContent='';
+    }
+
+    // date handling
+    const dateEl = clone.querySelector('#heroDate');
+    if(dateEl){
+      const t = (dateEl.textContent||'').trim();
+      if(!t || t.toUpperCase()==='TAP TO SET DATE'){
+        const sep = dateEl.previousElementSibling;
+        if(sep && sep.classList.contains('sep')) sep.remove();
+        dateEl.remove();
+      }
+    }
+
+    // strip captions that are empty; clean the rest
+    clone.querySelectorAll('.card__cap').forEach(c=>{
+      if(!(c.textContent||'').trim()) c.remove();
+      else c.removeAttribute('data-ph');
+    });
+
+    // make everything non-editable / non-interactive
+    clone.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));
+    clone.querySelectorAll('input[type=file]').forEach(e=>e.remove());
+    const bar = clone.querySelector('#dlbar'); if(bar) bar.remove();
+    clone.querySelectorAll('script').forEach(s=>s.remove());
+
+    // add a lightweight confetti burst to the finished page
+    const cf = document.createElement('script');
+    cf.textContent = EXPORT_CONFETTI;
+    clone.querySelector('body').appendChild(cf);
+
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
   }
 
-  // opening burst
-  window.addEventListener('load', ()=>{ celebrate(140); });
+  const dlbtn = document.getElementById('dlbtn');
+  dlbtn.addEventListener('click', ()=>{
+    dlbtn.disabled = true; const old = dlbtn.textContent; dlbtn.textContent = 'Building…';
+    setTimeout(()=>{
+      try{
+        const html = buildFinalHTML();
+        const blob = new Blob([html], {type:'text/html'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'aiden-turns-10.html';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(()=>URL.revokeObjectURL(url), 6000);
+        dlbtn.textContent = 'Downloaded ✓';
+      }catch(err){
+        console.error(err); dlbtn.textContent = 'Try again';
+      }
+      setTimeout(()=>{ dlbtn.textContent = old; dlbtn.disabled = false; }, 2200);
+    }, 60);
+  });
 </script>
-
-
-</body></html>
+</body>
+</html>
